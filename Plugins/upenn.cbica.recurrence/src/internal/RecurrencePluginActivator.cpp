@@ -1,25 +1,25 @@
-#include "DeepMRSegPluginActivator.h"
+#include "RecurrencePluginActivator.h"
 
-#include "QDeepMRSegView.h"
+#include "QRecurrenceView.h"
 
 #include <usModuleInitialization.h>
 
-ctkPluginContext* DeepMRSegPluginActivator::m_Context = nullptr;
+ctkPluginContext* RecurrencePluginActivator::m_Context = nullptr;
 
 US_INITIALIZE_MODULE 
 
-void DeepMRSegPluginActivator::start(ctkPluginContext *context)
+void RecurrencePluginActivator::start(ctkPluginContext *context)
 {
-  BERRY_REGISTER_EXTENSION_CLASS(QDeepMRSegView, context)
+  BERRY_REGISTER_EXTENSION_CLASS(QRecurrenceView, context)
 
   m_Context = context;
 }
 
-void DeepMRSegPluginActivator::stop(ctkPluginContext*)
+void RecurrencePluginActivator::stop(ctkPluginContext*)
 {
 }
 
-ctkPluginContext* DeepMRSegPluginActivator::getContext()
+ctkPluginContext* RecurrencePluginActivator::getContext()
 {
   return m_Context;
 }

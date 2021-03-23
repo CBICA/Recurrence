@@ -1,12 +1,12 @@
-#ifndef upenn_cbica_deepmrseg_Activator_h
-#define upenn_cbica_deepmrseg_Activator_h
+#ifndef upenn_cbica_Recurrence_Activator_h
+#define upenn_cbica_Recurrence_Activator_h
 
 #include <ctkPluginActivator.h>
 
-  class DeepMRSegPluginActivator : public QObject, public ctkPluginActivator
+  class RecurrencePluginActivator : public QObject, public ctkPluginActivator
   {
     Q_OBJECT
-    Q_PLUGIN_METADATA(IID "upenn_cbica_deepmrseg")
+    Q_PLUGIN_METADATA(IID "upenn_cbica_recurrence")
     Q_INTERFACES(ctkPluginActivator)
 
   public:
@@ -20,4 +20,4 @@
   };
 
 
-#endif // ! upenn_cbica_deepmrseg_Activator_h
+#endif // ! upenn_cbica_Recurrence_Activator_h

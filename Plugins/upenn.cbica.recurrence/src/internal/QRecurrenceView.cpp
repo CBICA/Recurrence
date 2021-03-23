@@ -1,24 +1,22 @@
-#include "QDeepMRSegView.h"
+#include "QRecurrenceView.h"
 
 #include <QMessageBox>
 
-#include "DeepMRSegMediator.h"
-
-const std::string QDeepMRSegView::VIEW_ID =
+const std::string QRecurrenceView::VIEW_ID =
     "upenn.cbica.deepmrseg.view";
 
 
-QDeepMRSegView::QDeepMRSegView()
+QRecurrenceView::QRecurrenceView()
 {
   // ---- General setup operations ----
 }
 
-QDeepMRSegView::~QDeepMRSegView()
+QRecurrenceView::~QRecurrenceView()
 {
 
 }
 
-void QDeepMRSegView::CreateQtPartControl(QWidget *parent)
+void QRecurrenceView::CreateQtPartControl(QWidget *parent)
 {
   // ---- Setup the basic GUI of this view ----
   m_Parent = parent;
@@ -38,22 +36,22 @@ void QDeepMRSegView::CreateQtPartControl(QWidget *parent)
   
 }
 
-void QDeepMRSegView::Activated()
+void QRecurrenceView::Activated()
 {
   // Not yet implemented
 }
 
-void QDeepMRSegView::Deactivated()
+void QRecurrenceView::Deactivated()
 {
   // Not yet implemented
 }
 
-void QDeepMRSegView::Visible()
+void QRecurrenceView::Visible()
 {
   // Not yet implemented
 }
 
-void QDeepMRSegView::Hidden()
+void QRecurrenceView::Hidden()
 {
   // Not yet implemented
 }
@@ -62,7 +60,7 @@ void QDeepMRSegView::Hidden()
 /* protected slots                                                      */
 /************************************************************************/
 
-void QDeepMRSegView::OnDoStuffButtonClicked()
+void QRecurrenceView::OnDoStuffButtonClicked()
 {
     //QMessageBox msgError;
     //msgError.setText("Hello, I am DeepMRSeg.");
@@ -139,44 +137,44 @@ void QDeepMRSegView::OnDoStuffButtonClicked()
 /* protected                                                            */
 /************************************************************************/
 
-void QDeepMRSegView::OnRunScriptClicked()
+void QRecurrenceView::OnRunScriptClicked()
 {
 	MITK_INFO << "  script button clicked ";
 	captk::DeepMRSegMediator dmrs_mediator;
 	dmrs_mediator.RunSampleScript();
 }
 
-void QDeepMRSegView::OnSelectionChanged(berry::IWorkbenchPart::Pointer, const QList<mitk::DataNode::Pointer>& /*nodes*/)
+void QRecurrenceView::OnSelectionChanged(berry::IWorkbenchPart::Pointer, const QList<mitk::DataNode::Pointer>& /*nodes*/)
 {
 
 }
 
-void QDeepMRSegView::OnPreferencesChanged(const berry::IBerryPreferences* /*prefs*/)
+void QRecurrenceView::OnPreferencesChanged(const berry::IBerryPreferences* /*prefs*/)
 {
 
 }
 
-void QDeepMRSegView::NodeAdded(const mitk::DataNode* /*node*/)
+void QRecurrenceView::NodeAdded(const mitk::DataNode* /*node*/)
 {
 
 }
 
-void QDeepMRSegView::NodeRemoved(const mitk::DataNode* /*node*/)
+void QRecurrenceView::NodeRemoved(const mitk::DataNode* /*node*/)
 {
 
 }
 
-void QDeepMRSegView::SetFocus()
+void QRecurrenceView::SetFocus()
 {
 
 }
 
-void QDeepMRSegView::UpdateControls()
+void QRecurrenceView::UpdateControls()
 {
   // Here you can hide views that are not useful and more
 }
 
-void QDeepMRSegView::InitializeListeners()
+void QRecurrenceView::InitializeListeners()
 {
 
 }

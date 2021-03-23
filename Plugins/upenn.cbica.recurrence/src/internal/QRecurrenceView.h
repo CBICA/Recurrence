@@ -1,12 +1,12 @@
-#ifndef QDeepMRSegView_h
-#define QDeepMRSegView_h
+#ifndef QRecurrenceView_h
+#define QRecurrenceView_h
 
 #include <QmitkAbstractView.h>
 #include <mitkILifecycleAwarePart.h>
 
-#include "ui_QDeepMRSegControls.h"
+#include "ui_QRecurrenceControls.h"
 
-class QDeepMRSegView : public QmitkAbstractView, 
+class QRecurrenceView : public QmitkAbstractView, 
                               public mitk::ILifecycleAwarePart
 {
   Q_OBJECT
@@ -14,8 +14,8 @@ class QDeepMRSegView : public QmitkAbstractView,
 public:
   static const std::string VIEW_ID;
 
-  QDeepMRSegView();
-  virtual ~QDeepMRSegView();
+  QRecurrenceView();
+  virtual ~QRecurrenceView();
 
   // GUI setup
   void CreateQtPartControl(QWidget *parent);
@@ -58,9 +58,9 @@ protected:
   QWidget *m_Parent;
 
   /// \brief Qt GUI file
-  Ui::QDeepMRSegControls m_Controls;
+  Ui::QRecurrenceControls m_Controls;
 
 
 };
 
-#endif // ! QDeepMRSegView_h
+#endif // ! QRecurrenceView_h

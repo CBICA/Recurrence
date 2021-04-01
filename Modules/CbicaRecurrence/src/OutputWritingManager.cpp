@@ -18,8 +18,10 @@ See COPYING file or https://www.med.upenn.edu/cbica/software-agreement.html
 #include <QMessageBox>
 #include <QString>
 #include <QDir>
-#include "cbicaLogging.h"
+//#include "cbicaLogging.h"
 #include "CaPTkDefines.h"
+
+#include "mitkLogMacros.h"
 
 OutputWritingManager::OutputWritingManager()
 {
@@ -130,7 +132,8 @@ void OutputWritingManager::SaveModelResults(VariableSizeMatrixType scaledFeature
     }
     catch (itk::ExceptionObject &excp)
     {
-      cbica::Logging(loggerFile, "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription()));
+      //cbica::Logging(loggerFile, "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription()));
+		MITK_INFO << "Exception detected while trying to write mean and std values: " + std::string(excp.GetDescription());
       exit(EXIT_FAILURE);
     }
   }
@@ -150,7 +153,8 @@ void OutputWritingManager::SaveModelResults(VariableSizeMatrixType scaledFeature
     }
     catch (itk::ExceptionObject & excp)
     {
-      cbica::Logging(loggerFile, "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription()));
+      //cbica::Logging(loggerFile, "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription()));
+		MITK_INFO << "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription());
       exit(EXIT_FAILURE);
     }
   }
@@ -170,7 +174,8 @@ void OutputWritingManager::SaveModelResults(VariableSizeMatrixType scaledFeature
     }
     catch (itk::ExceptionObject & excp)
     {
-      cbica::Logging(loggerFile, "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription()));
+      //cbica::Logging(loggerFile, "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription()));
+		MITK_INFO << "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription());
       exit(EXIT_FAILURE);
     }
   }
@@ -190,7 +195,8 @@ void OutputWritingManager::SaveModelResults(VariableSizeMatrixType scaledFeature
     }
     catch (itk::ExceptionObject & excp)
     {
-      cbica::Logging(loggerFile, "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription()));
+      //cbica::Logging(loggerFile, "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription()));
+		MITK_INFO << "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription());
       exit(EXIT_FAILURE);
     }
   }
@@ -210,7 +216,8 @@ void OutputWritingManager::SaveModelResults(VariableSizeMatrixType scaledFeature
     }
     catch (itk::ExceptionObject & excp)
     {
-      cbica::Logging(loggerFile, "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription()));
+      //cbica::Logging(loggerFile, "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription()));
+		MITK_INFO << "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription());
       exit(EXIT_FAILURE);
     }
   }
@@ -230,7 +237,8 @@ void OutputWritingManager::SaveModelResults(VariableSizeMatrixType scaledFeature
     }
     catch (itk::ExceptionObject & excp)
     {
-      cbica::Logging(loggerFile, "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription()));
+      //cbica::Logging(loggerFile, "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription()));
+		MITK_INFO << "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription());
       exit(EXIT_FAILURE);
     }
   }
@@ -250,7 +258,8 @@ void OutputWritingManager::SaveModelResults(VariableSizeMatrixType scaledFeature
     }
     catch (itk::ExceptionObject & excp)
     {
-      cbica::Logging(loggerFile, "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription()));
+      //cbica::Logging(loggerFile, "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription()));
+		MITK_INFO << "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription());
       exit(EXIT_FAILURE);
     }
   }
@@ -270,7 +279,8 @@ void OutputWritingManager::SaveModelResults(VariableSizeMatrixType scaledFeature
     }
     catch (itk::ExceptionObject & excp)
     {
-      cbica::Logging(loggerFile, "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription()));
+      //cbica::Logging(loggerFile, "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription()));
+		MITK_INFO << "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription());
       exit(EXIT_FAILURE);
     }
   }
@@ -290,7 +300,8 @@ void OutputWritingManager::SaveModelResults(VariableSizeMatrixType scaledFeature
     }
     catch (itk::ExceptionObject & excp)
     {
-      cbica::Logging(loggerFile, "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription()));
+      //cbica::Logging(loggerFile, "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription()));
+		MITK_INFO << "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription());
       exit(EXIT_FAILURE);
     }
   }
@@ -310,7 +321,8 @@ void OutputWritingManager::SaveModelResults(VariableSizeMatrixType scaledFeature
     }
     catch (itk::ExceptionObject & excp)
     {
-      cbica::Logging(loggerFile, "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription()));
+      //cbica::Logging(loggerFile, "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription()));
+		MITK_INFO << "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription());
       exit(EXIT_FAILURE);
     }
   }
@@ -330,7 +342,8 @@ void OutputWritingManager::SaveModelResults(VariableSizeMatrixType scaledFeature
     }
     catch (itk::ExceptionObject & excp)
     {
-      cbica::Logging(loggerFile, "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription()));
+      //cbica::Logging(loggerFile, "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription()));
+		MITK_INFO << "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription());
       exit(EXIT_FAILURE);
     }
   }
@@ -350,7 +363,8 @@ void OutputWritingManager::SaveModelResults(VariableSizeMatrixType scaledFeature
     }
     catch (itk::ExceptionObject & excp)
     {
-      cbica::Logging(loggerFile, "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription()));
+      //cbica::Logging(loggerFile, "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription()));
+		MITK_INFO << "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription());
       exit(EXIT_FAILURE);
     }
   }
@@ -370,7 +384,8 @@ void OutputWritingManager::SaveModelResults(VariableSizeMatrixType scaledFeature
     }
     catch (itk::ExceptionObject & excp)
     {
-      cbica::Logging(loggerFile, "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription()));
+      //cbica::Logging(loggerFile, "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription()));
+		MITK_INFO << "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription());
       exit(EXIT_FAILURE);
     }
   }
@@ -390,7 +405,8 @@ void OutputWritingManager::SaveModelResults(VariableSizeMatrixType scaledFeature
     }
     catch (itk::ExceptionObject & excp)
     {
-      cbica::Logging(loggerFile, "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription()));
+      //cbica::Logging(loggerFile, "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription()));
+		MITK_INFO << "Exception detected while trying to write mean and std values: '" + std::string(excp.GetDescription());
       exit(EXIT_FAILURE);
     }
   }
@@ -413,7 +429,8 @@ void OutputWritingManager::SaveModelResults(VariableSizeMatrixType scaledFeature
     }
     catch (itk::ExceptionObject & excp)
     {
-      cbica::Logging(loggerFile, "Exception detected while trying to write perfusion measures: '" + std::string(excp.GetDescription()));
+      //cbica::Logging(loggerFile, "Exception detected while trying to write perfusion measures: '" + std::string(excp.GetDescription()));
+		MITK_INFO << "Exception detected while trying to write perfusion measures: '" + std::string(excp.GetDescription());
       exit(EXIT_FAILURE);
     }
   }
@@ -448,7 +465,8 @@ void OutputWritingManager::SaveModelResults(VariableSizeMatrixType scaledFeature
   }
   catch (itk::ExceptionObject & excp)
   {
-    cbica::Logging(loggerFile, "Exception detected while trying to write modality information: '" + std::string(excp.GetDescription()));
+    //cbica::Logging(loggerFile, "Exception detected while trying to write modality information: '" + std::string(excp.GetDescription()));
+	  MITK_INFO << "Exception detected while trying to write modality information: '" + std::string(excp.GetDescription());
     exit(EXIT_FAILURE);
   }
 }

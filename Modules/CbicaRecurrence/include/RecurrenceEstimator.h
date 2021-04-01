@@ -23,6 +23,7 @@ See COPYING file or https://www.med.upenn.edu/cbica/software-agreement.html
 #include "itkImageFileReader.h"
 #include "itkMeanImageFilter.h"
 #include "itkCSVArray2DFileReader.h"
+#include "itkImageRegionIteratorWithIndex.h"
 //#include "itkBinaryErodeImageFilter.h"
 //#include "itkBinaryBallStructuringElement.h"
 #include "CaPTkDefines.h"
@@ -1228,7 +1229,7 @@ typename ImageType::Pointer RecurrenceEstimator::RecurrenceMapPostprocessingForB
     RevisedRecurrenceProbabilityMap->SetDirection(RecurrenceProbabilityMap->GetDirection());
 
     double minVal=0;
-    typedef itk::ImageRegionIteratorWithIndex< TImageType > IteratorType;
+    typedef itk::ImageRegionIteratorWithIndex< ImageTypeFloat3D > IteratorType;
     IteratorType mapIt(RecurrenceProbabilityMap, RecurrenceProbabilityMap->GetLargestPossibleRegion());
     mapIt.GoToBegin();
 

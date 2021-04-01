@@ -598,12 +598,14 @@ bool RecurrenceEstimator::RecurrenceEstimateOnExistingModel(std::vector<std::map
       ++imIt;
       ++RecIt;
     }
-    cbica::Logging(loggerFile, "Before testing.");
+    //cbica::Logging(loggerFile, "Before testing.");
+	MITK_INFO << "Before testing.";
     try
     {
       if (cbica::fileExists(modeldirectory + "/" + mTrainedModelNameCSV))
       {
-        cbica::Logging(loggerFile, "Before testing 1.");
+        //cbica::Logging(loggerFile, "Before testing 1.");
+		  MITK_INFO << "Before testing 1.";
         VariableLengthVectorType result;
         result = DistanceFunction(ScaledTestingData, modeldirectory + "/" + mTrainedModelNameCSV, RECURRENCE_MODEL_RHO, RECURRENCE_MODEL_G);
         for (unsigned int index = 0; index < result.Size(); index++)
@@ -615,7 +617,8 @@ bool RecurrenceEstimator::RecurrenceEstimateOnExistingModel(std::vector<std::map
       }
       else
       {
-        cbica::Logging(loggerFile, "Before testing 2.");
+        //cbica::Logging(loggerFile, "Before testing 2.");
+		  MITK_INFO << "Before testing 2.";
         VectorDouble result;
         result = testOpenCVSVM(ScaledTestingData, modeldirectory + "/" + mTrainedModelNameXML);
         for (unsigned int index = 0; index < result.size(); index++)
@@ -625,7 +628,8 @@ bool RecurrenceEstimator::RecurrenceEstimateOnExistingModel(std::vector<std::map
     }
     catch (itk::ExceptionObject & excp)
     {
-      cbica::Logging(loggerFile, "Error caught during testing: " + std::string(excp.GetDescription()));
+      //cbica::Logging(loggerFile, "Error caught during testing: " + std::string(excp.GetDescription()));
+		MITK_INFO << "Error caught during testing: " + std::string(excp.GetDescription());
 	  return false;
     }
 
@@ -654,7 +658,8 @@ bool RecurrenceEstimator::RecurrenceEstimateOnExistingModel(std::vector<std::map
 	}
 	catch (itk::ExceptionObject & excp)
 	{
-		cbica::Logging(loggerFile, "Error caught during post-processing of recurrence map: " + std::string(excp.GetDescription()));
+		//cbica::Logging(loggerFile, "Error caught during post-processing of recurrence map: " + std::string(excp.GetDescription()));
+		MITK_INFO << "Error caught during post-processing of recurrence map: " + std::string(excp.GetDescription());
 		return false;
 	}
     //----------------------------------------------------------------------------------------------------------------------------------

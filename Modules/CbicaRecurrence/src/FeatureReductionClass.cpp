@@ -122,11 +122,7 @@ vtkSmartPointer< vtkTable >  FeatureReductionClass::GetDiscerningPerfusionTimePo
   std::string var_string;
 
   vtkSmartPointer<vtkPCAStatistics> pcaStatistics = vtkSmartPointer<vtkPCAStatistics>::New();
-#if VTK_MAJOR_VERSION <= 5
-  pcaStatistics->SetInput(vtkStatisticsAlgorithm::INPUT_DATA, datasetTable);
-#else
   pcaStatistics->SetInputData(vtkStatisticsAlgorithm::INPUT_DATA, datasetTable);
-#endif
 
 for (int i = 0; i < NumberOfFeatures; i++)
 {
@@ -229,11 +225,8 @@ vtkSmartPointer< vtkTable >  FeatureReductionClass::GetDiscerningPerfusionTimePo
 	std::string var_string;
 
 	vtkSmartPointer<vtkPCAStatistics> pcaStatistics = vtkSmartPointer<vtkPCAStatistics>::New();
-#if VTK_MAJOR_VERSION <= 5
-	pcaStatistics->SetInput(vtkStatisticsAlgorithm::INPUT_DATA, datasetTable);
-#else
 	pcaStatistics->SetInputData(vtkStatisticsAlgorithm::INPUT_DATA, datasetTable);
-#endif
+
 
 	size_t i = 0;
 	//fill up the table
@@ -583,11 +576,8 @@ vtkSmartPointer< vtkTable >  FeatureReductionClass::GetDiscerningPerfusionTimePo
   datasetTable->AddColumn(W0);
 
   vtkSmartPointer<vtkPCAStatistics> pcaStatistics = vtkSmartPointer<vtkPCAStatistics>::New();
-#if VTK_MAJOR_VERSION <= 5
-  pcaStatistics->SetInput(vtkStatisticsAlgorithm::INPUT_DATA, datasetTable);
-#else
   pcaStatistics->SetInputData(vtkStatisticsAlgorithm::INPUT_DATA, datasetTable);
-#endif
+
 
   pcaStatistics->SetColumnStatus("a0", 1);
   pcaStatistics->SetColumnStatus("a1", 1);
@@ -924,11 +914,7 @@ vtkSmartPointer< vtkTable >  FeatureReductionClass::GetDiscerningPerfusionTimePo
   datasetTable->AddColumn(W0);
 
   vtkSmartPointer<vtkPCAStatistics> pcaStatistics = vtkSmartPointer<vtkPCAStatistics>::New();
-#if VTK_MAJOR_VERSION <= 5
-  pcaStatistics->SetInput(vtkStatisticsAlgorithm::INPUT_DATA, datasetTable);
-#else
   pcaStatistics->SetInputData(vtkStatisticsAlgorithm::INPUT_DATA, datasetTable);
-#endif
 
   pcaStatistics->SetColumnStatus("a0", 1);
   pcaStatistics->SetColumnStatus("a1", 1);
@@ -2386,11 +2372,7 @@ vtkSmartPointer< vtkTable >  FeatureReductionClass::GetDiscerningPerfusionTimePo
   datasetTable->AddColumn(Z4);
 
   vtkSmartPointer<vtkPCAStatistics> pcaStatistics = vtkSmartPointer<vtkPCAStatistics>::New();
-#if VTK_MAJOR_VERSION <= 5
-  pcaStatistics->SetInput(vtkStatisticsAlgorithm::INPUT_DATA, datasetTable);
-#else
   pcaStatistics->SetInputData(vtkStatisticsAlgorithm::INPUT_DATA, datasetTable);
-#endif
 
   pcaStatistics->SetColumnStatus("a0", 1);
   pcaStatistics->SetColumnStatus("a1", 1);
@@ -3236,11 +3218,7 @@ vtkSmartPointer< vtkTable >  FeatureReductionClass::GetDiscerningPerfusionTimePo
   datasetTable->AddColumn(W0);
 
   vtkSmartPointer<vtkPCAStatistics> pcaStatistics = vtkSmartPointer<vtkPCAStatistics>::New();
-#if VTK_MAJOR_VERSION <= 5
-  pcaStatistics->SetInput(vtkStatisticsAlgorithm::INPUT_DATA, datasetTable);
-#else
   pcaStatistics->SetInputData(vtkStatisticsAlgorithm::INPUT_DATA, datasetTable);
-#endif
 
   pcaStatistics->SetColumnStatus("a0", 1);
   pcaStatistics->SetColumnStatus("a1", 1);
@@ -3586,11 +3564,7 @@ vtkSmartPointer< vtkTable >  FeatureReductionClass::GetDiscerningPerfusionTimePo
   //datasetTable->AddColumn(W0);
 
   vtkSmartPointer<vtkPCAStatistics> pcaStatistics = vtkSmartPointer<vtkPCAStatistics>::New();
-#if VTK_MAJOR_VERSION <= 5
-  pcaStatistics->SetInput(vtkStatisticsAlgorithm::INPUT_DATA, datasetTable);
-#else
   pcaStatistics->SetInputData(vtkStatisticsAlgorithm::INPUT_DATA, datasetTable);
-#endif
 
   pcaStatistics->SetColumnStatus("a0", 1);
   pcaStatistics->SetColumnStatus("a1", 1);

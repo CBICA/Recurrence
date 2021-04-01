@@ -1,6 +1,6 @@
 #include "RecurrenceEstimator.h"
-#include "fMainWindow.h"
-
+#include "itkRescaleIntensityImageFilter.h"
+#include "PreprocessingPipelineClass.h"
 
 typedef itk::Image< float, 3 > ImageType;
 

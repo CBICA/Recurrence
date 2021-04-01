@@ -24,7 +24,6 @@ See COPYING file or https://www.med.upenn.edu/cbica/software-agreement.html
 //#include "itkBinaryErodeImageFilter.h"
 //#include "itkBinaryBallStructuringElement.h"
 #include "CaPTkDefines.h"
-#include "cbicaLogging.h"
 #include "CaPTkEnums.h"
 #include "CaPTkClassifierUtils.h"
 
@@ -83,7 +82,7 @@ public:
 	{
 		mTrainedModelNameXML = "Recurrence_SVM_Model.xml";
 		mTrainedModelNameCSV = "Recurrence_SVM_Model.csv";
-		logger.UseNewFile(loggerFile);
+		//logger.UseNewFile(loggerFile);
 	};
 
 	//! Default Destructor
@@ -93,7 +92,7 @@ public:
 	std::string mLastEncounteredError;
 	std::string mTrainedModelNameXML;
 	std::string mTrainedModelNameCSV;
-	cbica::Logging logger;
+	//cbica::Logging logger;
 
 	VariableLengthVectorType DistanceFunction(const VariableSizeMatrixType &testData, const std::string &filename, const double &rho, const double &bestg);
 	/**
@@ -697,7 +696,8 @@ void RecurrenceEstimator::RecurrenceEstimateOnGivenSubjectUsingExistingModel(typ
 	//	mOutputLocalPtr.ReadModelParameters(modeldirectory + "/Recurrence_ZScore_Mean.csv", modeldirectory + "/Recurrence_ZScore_Std.csv", mean, stds);
 	//	mFeatureScalingLocalPtr.SetParameters(mean, stds);
 	//}
-	cbica::Logging(loggerFile, "Model reading finished.");
+	//cbica::Logging(loggerFile, "Model reading finished.");
+	MITK_INFO << "Model reading finished.";
 
 
 	////std::string modelFileName = "";

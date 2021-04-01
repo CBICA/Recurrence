@@ -2,6 +2,7 @@
 #include "itkRescaleIntensityImageFilter.h"
 #include "PreprocessingPipelineClass.h"
 #include "mitkLogMacros.h"
+#include <QFileInfo>
 
 typedef itk::Image< float, 3 > ImageType;
 
@@ -602,7 +603,8 @@ bool RecurrenceEstimator::RecurrenceEstimateOnExistingModel(std::vector<std::map
 	MITK_INFO << "Before testing.";
     try
     {
-      if (cbica::fileExists(modeldirectory + "/" + mTrainedModelNameCSV))
+      //if (cbica::fileExists(modeldirectory + "/" + mTrainedModelNameCSV))
+		if (QFileInfo(QString(modeldirectory.c_str()) + "/" + QString(mTrainedModelNameCSV.c_str())).exists())
       {
         //cbica::Logging(loggerFile, "Before testing 1.");
 		  MITK_INFO << "Before testing 1.";

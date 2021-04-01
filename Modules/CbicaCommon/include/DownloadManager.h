@@ -53,7 +53,9 @@
 #include <QtNetwork>
 #include <QtCore>
 
-class DownloadManager : public QObject
+#include "MitkCbicaCommonExports.h"
+
+class MITKCBICACOMMON_EXPORT DownloadManager : public QObject
 {
 	Q_OBJECT
 public:

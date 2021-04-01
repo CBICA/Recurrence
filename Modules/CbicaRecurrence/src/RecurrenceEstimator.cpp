@@ -1,6 +1,7 @@
 #include "RecurrenceEstimator.h"
 #include "itkRescaleIntensityImageFilter.h"
 #include "PreprocessingPipelineClass.h"
+#include "mitkLogMacros.h"
 
 typedef itk::Image< float, 3 > ImageType;
 
@@ -138,7 +139,8 @@ bool RecurrenceEstimator::TrainNewModelOnGivenData(const std::vector<std::map<CA
 		}
 		catch (const std::exception& e1)
 		{
-			logger.WriteError("Error in calculating the features for patient ID = " + static_cast<std::string>(currentsubject[CAPTK::ImageModalityType::IMAGE_TYPE_PSR]) + ". Error code : " + std::string(e1.what()));
+			//logger.WriteError("Error in calculating the features for patient ID = " + static_cast<std::string>(currentsubject[CAPTK::ImageModalityType::IMAGE_TYPE_PSR]) + ". Error code : " + std::string(e1.what()));
+			MITK_INFO << "Error in calculating the features for patient ID = " + static_cast<std::string>(currentsubject[CAPTK::ImageModalityType::IMAGE_TYPE_PSR]) + ". Error code : " + std::string(e1.what());
 			return false;
 		}
 	}
@@ -277,7 +279,8 @@ bool RecurrenceEstimator::TrainNewModelOnGivenData(const std::vector<std::map<CA
 	}
 	catch (const std::exception& e1)
 	{
-		logger.WriteError("Error in writing model files to the output directory: " + outputdirectory + ". Error code : " + std::string(e1.what()));
+		//logger.WriteError("Error in writing model files to the output directory: " + outputdirectory + ". Error code : " + std::string(e1.what()));
+		MITK_INFO << "Error in writing model files to the output directory: " + outputdirectory + ". Error code : " + std::string(e1.what());
 		return false;
 	}
 
@@ -288,7 +291,8 @@ bool RecurrenceEstimator::TrainNewModelOnGivenData(const std::vector<std::map<CA
 	}
 	catch (const std::exception& e1)
 	{
-		logger.WriteError("Training on the subjects failed. Error code : " + std::string(e1.what()));
+		//logger.WriteError("Training on the subjects failed. Error code : " + std::string(e1.what()));
+		MITK_INFO << "Training on the subjects failed. Error code : " + std::string(e1.what());
 		return false;
 	}
 	mFeatureReductionLocalPtr.ResetParameters();
@@ -396,7 +400,8 @@ bool RecurrenceEstimator::RecurrenceEstimateOnExistingModel(std::vector<std::map
   }
   catch (const std::exception& e1)
   {
-	  logger.WriteError("Error in reading ZScore and PCA parameters from directory: " + modeldirectory + ". Error code : " + std::string(e1.what()));
+	  //logger.WriteError("Error in reading ZScore and PCA parameters from directory: " + modeldirectory + ". Error code : " + std::string(e1.what()));
+	  MITK_INFO << "Error in reading ZScore and PCA parameters from directory: " + modeldirectory + ". Error code : " + std::string(e1.what());
 	  return false;
   }
 
@@ -495,11 +500,13 @@ bool RecurrenceEstimator::RecurrenceEstimateOnExistingModel(std::vector<std::map
 
 		imagetype = CAPTK::ImageExtension::NIfTI;
 		testindices = mNiftiLocalPtr.LoadTestData(T1CEImagePointer, T2FlairImagePointer, T1ImagePointer, T2ImagePointer, perfImagePointer, AXImagePointer, FAImagePointer, RADImagePointer, TRImagePointer, LabelImagePointer, dilatedEdema, perfusionIntensities, otherIntensities, distanceIntensities, imagetype,useConventionalrData, useDTIData, usePerfData, useDistData);
-		cbica::Logging(loggerFile, "Test data  loading finished.");
+		//cbica::Logging(loggerFile, "Test data  loading finished.");
+		MITK_INFO << "Test data  loading finished.";
 	}
 	catch (const std::exception& e1)
 	{
-		logger.WriteError("Error in extracting features for patient ID: " + static_cast<std::string>(currentsubject[CAPTK::ImageModalityType::IMAGE_TYPE_SUDOID]) + ". Error code : " + std::string(e1.what()));
+		//logger.WriteError("Error in extracting features for patient ID: " + static_cast<std::string>(currentsubject[CAPTK::ImageModalityType::IMAGE_TYPE_SUDOID]) + ". Error code : " + std::string(e1.what()));
+		MITK_INFO <<"Error in extracting features for patient ID: " + static_cast<std::string>(currentsubject[CAPTK::ImageModalityType::IMAGE_TYPE_SUDOID]) + ". Error code : " + std::string(e1.what());
 		return false;
 	}
 

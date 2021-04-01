@@ -46,6 +46,7 @@ static std::string cSeparator = "/";
 #endif
 
 typedef itk::CSVArray2DFileReader<double> CSVFileReaderType;
+typedef vnl_matrix<double> MatrixType;
 
 /**
 \class RecurrenceEstimator

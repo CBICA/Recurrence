@@ -20,8 +20,6 @@ See COPYING file or https://www.med.upenn.edu/cbica/software-agreement.html
 #include "itkVariableSizeMatrix.h"
 #include "itkVariableLengthVector.h"
 #include "itkImageRegionIterator.h"
-#include "cbicaITKSafeImageIO.h"
-
 
 using VariableSizeMatrixType = itk::VariableSizeMatrix< double >;
 using VariableLengthVectorType = itk::VariableLengthVector< double >;

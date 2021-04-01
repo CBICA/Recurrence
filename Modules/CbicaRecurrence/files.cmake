@@ -5,6 +5,7 @@ set(CPP_FILES
   FeatureScalingClass.cpp
   NiftiDataManager.cpp
   OutputWritingManager.cpp
+  PreprocessingPipelineClass.cpp
 )
 
 set(UI_FILES
@@ -18,6 +19,10 @@ set(H_FILES
   include/FeatureScalingClass.h
   include/NiftiDataManager.h
   include/OutputWritingManager.h
+  include/PreprocessingPipelineClass.h
+  include/itkN3MRIBiasFieldCorrectionImageFilter.h
+  include/itkN3MRIBiasFieldCorrectionImageFilter.hxx
+  include/antsAllocImage.h
 )
 
 set(MOC_H_FILES

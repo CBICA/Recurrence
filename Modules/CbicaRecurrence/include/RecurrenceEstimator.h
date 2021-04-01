@@ -21,6 +21,7 @@ See COPYING file or https://www.med.upenn.edu/cbica/software-agreement.html
 #include "FeatureExtractionClass.h"
 //#include "fProgressDialog.h"
 #include "itkMeanImageFilter.h"
+#include "itkCSVArray2DFileReader.h"
 //#include "itkBinaryErodeImageFilter.h"
 //#include "itkBinaryBallStructuringElement.h"
 #include "CaPTkDefines.h"
@@ -43,6 +44,8 @@ static std::string cSeparator = "\\";
 static std::string cSeparator = "/";
 //  static const char* cSeparators = "/";
 #endif
+
+typedef itk::CSVArray2DFileReader<double> CSVFileReaderType;
 
 /**
 \class RecurrenceEstimator

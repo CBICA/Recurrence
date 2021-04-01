@@ -20,6 +20,7 @@ See COPYING file or https://www.med.upenn.edu/cbica/software-agreement.html
 #include "FeatureScalingClass.h"
 #include "FeatureExtractionClass.h"
 //#include "fProgressDialog.h"
+#include "itkImageFileReader.h"
 #include "itkMeanImageFilter.h"
 #include "itkCSVArray2DFileReader.h"
 //#include "itkBinaryErodeImageFilter.h"

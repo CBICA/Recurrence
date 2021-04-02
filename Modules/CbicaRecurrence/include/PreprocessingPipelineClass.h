@@ -52,7 +52,7 @@ See COPYING file or https://www.med.upenn.edu/cbica/software-agreement.html
 #include "CaPTkEnums.h"
 #include <QMessageBox>
 #include <QString>
-
+#include "MitkCbicaRecurrenceExports.h"
 
 template <typename TRegistration>
 class RegistrationInterfaceCommand : public itk::Command
@@ -163,7 +163,7 @@ public:
   }
 };
 
-class  PreprocessingPipelineClass
+class MITKCBICARECURRENCE_EXPORT PreprocessingPipelineClass
 {
 
 public:

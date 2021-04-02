@@ -21,6 +21,9 @@ See COPYING file or https://www.med.upenn.edu/cbica/software-agreement.html
 #include "itkVariableLengthVector.h"
 #include "itkImageRegionIterator.h"
 
+#include "itkImageFileWriter.h"
+#include "MitkCbicaRecurrenceExports.h"
+
 using VariableSizeMatrixType = itk::VariableSizeMatrix< double >;
 using VariableLengthVectorType = itk::VariableLengthVector< double >;
 
@@ -29,7 +32,7 @@ enum WritingType
   SUSAN, BIAS_CORRECT, REGISTRATION, RECURRENCE_MAP
 };
 
-class OutputWritingManager
+class MITKCBICARECURRENCE_EXPORT OutputWritingManager
 {
 public:
   OutputWritingManager();
@@ -143,7 +146,12 @@ void OutputWritingManager::WriteOutputNifti(typename ImageType::Pointer image, s
 template<class ImageType>
 void OutputWritingManager::WriteRecurrenceOutputInNifti(typename ImageType::Pointer RecProbabilityMap, std::string filename)
 {
-  cbica::WriteImage< ImageType >(RecProbabilityMap, filename + "_RecurrenceMap.nii.gz");
+  //cbica::WriteImage< ImageType >(RecProbabilityMap, filename + "_RecurrenceMap.nii.gz");
+
+	// Save-->TBD: Use this whereever possible
+	//mitk::IOUtil::Save(RecProbabilityMap, filename + "_RecurrenceMap.nii.gz");
+
+	this->WriteOutputNifti< ImageType>(RecProbabilityMap, filename + "_RecurrenceMap"); //Use MITK file IO whereever possible
 
   ////itk::NiftiImageIO::Pointer nifti_io = itk::NiftiImageIO::New();
   //typedef itk::ImageFileWriter< ImageType > WriterType;

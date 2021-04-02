@@ -18,6 +18,7 @@ PURPOSE.  See the above copyright notices for more information.
 #include "itkVector.h"
 
 #include "vnl/vnl_vector.h"
+#include "MitkCbicaRecurrenceExports.h"
 
 namespace itk
 {
@@ -81,7 +82,7 @@ namespace itk
 
   template <class TInputImage, class TBiasFieldImage, class TMaskImage,
   class TConfidenceImage>
-  class N3BiasFieldScaleCostFunction
+  class MITKCBICARECURRENCE_EXPORT N3BiasFieldScaleCostFunction
     : public       SingleValuedCostFunction
   {
   public:

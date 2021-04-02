@@ -15,13 +15,14 @@ See COPYING file or https://www.med.upenn.edu/cbica/software-agreement.html
 
 //#include "CAPTk.h"
 #include "itkVariableSizeMatrix.h"
+#include "MitkCbicaRecurrenceExports.h"
 using VariableSizeMatrixType = itk::VariableSizeMatrix< double >;
 using VectorDouble = std::vector < double >;
 
 #define TRAINING_LABEL_NEAR 0 // [TBD] - convert to enum
 #define TRAINING_LABEL_FAR 1
 
-class  FeatureExtractionClass
+class MITKCBICARECURRENCE_EXPORT FeatureExtractionClass
 {
 public:
   //!Constructor

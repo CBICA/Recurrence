@@ -30,6 +30,8 @@ See COPYING file or https://www.med.upenn.edu/cbica/software-agreement.html
 #include "CaPTkEnums.h"
 #include "CaPTkClassifierUtils.h"
 
+#include "MitkCbicaRecurrenceExports.h"
+
 #define RECURRENCE_MODEL_G 0.5
 #define RECURRENCE_MODEL_RHO 0.0896
 
@@ -47,6 +49,8 @@ static std::string cSeparator = "/";
 //  static const char* cSeparators = "/";
 #endif
 
+namespace Recurrence 
+{
 typedef itk::CSVArray2DFileReader<double> CSVFileReaderType;
 typedef vnl_matrix<double> MatrixType;
 
@@ -75,7 +79,7 @@ year={2014},
 organization={RSNA Radiology}
 }
 */
-class RecurrenceEstimator
+class MITKCBICARECURRENCE_EXPORT RecurrenceEstimator
 #ifdef APP_BASE_CAPTK_H
 	: public ApplicationBase
 #endif
@@ -1427,6 +1431,7 @@ VectorDouble RecurrenceEstimator::RecurrenceMapPostprocessing(VectorDouble resul
 	//	return meanRecurrenceMap;
 }
 
+}//namespace end
 
 #endif
 

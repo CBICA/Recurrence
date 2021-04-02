@@ -18,11 +18,12 @@ See COPYING file or https://www.med.upenn.edu/cbica/software-agreement.html
 #include "CaPTkDefines.h"
 //#include "itkVariableSizeMatrix.h"
 //#include "itkVariableLengthVector.h"
+#include "MitkCbicaRecurrenceExports.h"
 //
 //using VariableSizeMatrixType = itk::VariableSizeMatrix< double >;
 //using VariableLengthVectorType = itk::VariableLengthVector< double >;
 
-class  FeatureScalingClass
+class MITKCBICARECURRENCE_EXPORT FeatureScalingClass
 {
 public:
   //!Constructor

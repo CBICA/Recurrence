@@ -23,6 +23,8 @@ See COPYING file or https://www.med.upenn.edu/cbica/software-agreement.html
 #include "vtkTable.h"
 //#include "vtkTable.h"
 //#include "CAPTk.h"
+#include "MitkCbicaRecurrenceExports.h"
+
 using VectorVectorDouble = std::vector< std::vector < double > >;
 using VariableSizeMatrixType = itk::VariableSizeMatrix< double >;
 using VariableLengthVectorType = itk::VariableLengthVector< double >;
@@ -31,7 +33,7 @@ class vtkTable;
 
 #define NO_OF_PCA_FEATURES 45 // TODO: this selects the number of PCA features that are generated - this needs to be dynamic and picked up from the size[3] of the loaded perfusion image; search for this variable and "45" everywhere and replace with perfusionImage_size[3]
 
-class  FeatureReductionClass
+class MITKCBICARECURRENCE_EXPORT FeatureReductionClass
 {
 public:
   //!Constructor

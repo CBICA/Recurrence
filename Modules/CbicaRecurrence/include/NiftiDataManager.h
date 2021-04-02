@@ -6,11 +6,12 @@
 #include "CaPTkDefines.h"
 #include "itkSignedMaurerDistanceMapImageFilter.h"
 #include <itkCastImageFilter.h>
+#include "MitkCbicaRecurrenceExports.h"
 
 using ImageTypeFloat4D = itk::Image< float, 4 >;
 using VectorVectorDouble = std::vector< std::vector < double > >;
 using VectorDouble = std::vector < double >;
-class NiftiDataManager
+class MITKCBICARECURRENCE_EXPORT NiftiDataManager
 {
 public:
   //!Constructor

@@ -23,7 +23,7 @@ ImageTypeFloat3D::Pointer NiftiDataManager::ReadNiftiImage(std::string filename)
 
   reader->SetFileName(filename);
   reader->ReadImageInformation();
-  std::string InputPixelType = reader->GetComponentTypeAsString(reader->GetComponentType());
+  //std::string InputPixelType = reader->GetComponentTypeAsString(reader->GetComponentType());
 
   image = ReadImageWithDimAndInputPixelType<ImageTypeFloat3D::PixelType, ImageTypeFloat3D::PixelType, ImageTypeFloat3D::ImageDimension>(filename);
   return image;
@@ -232,7 +232,7 @@ std::vector<ImageTypeFloat3D::IndexType> NiftiDataManager::LoadTestData(ImageTyp
   //--------------------perfusion intensities---------------------
   if (usePerfData)
   {
-    PerfusionImageType::RegionType regionperf = perfImagePointerNifti->GetLargestPossibleRegion();
+    //PerfusionImageType::RegionType regionperf = perfImagePointerNifti->GetLargestPossibleRegion();
     auto timeStamps = perfImagePointerNifti->GetLargestPossibleRegion().GetSize()[3];
     for (unsigned int i = 0; i < testIndices.size(); i++)
     {

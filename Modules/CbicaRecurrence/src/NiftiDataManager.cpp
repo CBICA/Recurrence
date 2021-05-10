@@ -40,7 +40,7 @@ itk::Image<float, 4>::Pointer NiftiDataManager::Read4DNiftiImage(std::string fil
   }
   reader->SetFileName(filename);
   reader->ReadImageInformation();
-  std::string InputPixelType = reader->GetComponentTypeAsString(reader->GetComponentType());
+  //std::string InputPixelType = reader->GetComponentTypeAsString(reader->GetComponentType());
   image = ReadImageWithDimAndInputPixelType<ImageTypeFloat3D::PixelType, ImageTypeFloat3D::PixelType, 4>(filename);
   return image;
 }

@@ -220,8 +220,8 @@ vtkSmartPointer< vtkTable >  FeatureReductionClass::GetDiscerningPerfusionTimePo
 
 	vtkSmartPointer<vtkTable> datasetTable = vtkSmartPointer<vtkTable>::New();
 	std::vector<vtkSmartPointer<vtkDoubleArray>> VectorOfVariables;
-	int counter = 0;
-	int var_Counter = 0;
+	//int counter = 0;
+	//int var_Counter = 0;
 	std::string var_string;
 
 	vtkSmartPointer<vtkPCAStatistics> pcaStatistics = vtkSmartPointer<vtkPCAStatistics>::New();
